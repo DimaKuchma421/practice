@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kuchmambetov</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+
+  <body>
+    <header>PRACTICE1-2024-KUCHMAMBETOV-DIMA</header>
+    <main>
+      <div class="processBut">
+        <button class="but">Process</button>
+        <div
+          style="color: #65a5d1; font-family: sans-serif; font-weight: bold"
+          class="text"
+        >
+          Number from 30 to 70
+        </div>
+        <input
+          class="input"
+          id="val"
+          type="number"
+          placeholder="From 30 to 200 mm"
+          value="30"
+        />
+      </div>
+      <section class="block">
+        <section class="paramview">
+          <div class="param">
+            <div id="val1">Rk:</div>
+            <div id="val2">Dk:</div>
+            <div id="val3">lp:</div>
+            <div id="val4">YpMax:</div>
+            <div id="val5">YpMin:</div>
+            <div id="val6">Yp:</div>
+            <div id="val7">Deg:</div>
+            <div id="val8">CirclePos:</div>
+          </div>
+          <div class="anim">
+            <div class="buts">
+              <button class="page1">Start</button>
+              <button class="page2">Stop</button>
+            </div>
+            <div class="ifr" id="div" style="position: relative">
+              <svg
+                id="tri"
+                style="
+                  position: absolute;
+                  rotate: 90deg;
+                  left: 147px;
+                  top: 91px;
+                "
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.61803 99L50 2.23607L98.382 99H1.61803Z"
+                  stroke="black"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
+                id="stick"
+                style="
+                  background-color: black;
+                  position: absolute;
+                  rotate: 90deg;
+                "
+                width="1000"
+                height="2"
+                viewBox="0 0 1000 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 1H1000" stroke="black" stroke-width="2" />
+              </svg>
+              <svg
+                id="stik"
+                style="
+                  background-color: black;
+                  position: absolute;
+                  rotate: 90deg;
+                "
+                width="200"
+                height="2"
+                viewBox="0 0 100 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 1H1000" stroke="black" stroke-width="2" />
+              </svg>
+              <svg
+                id="slider"
+                style="
+                  border-radius: 100px;
+                  border: 2px black solid;
+                  position: absolute;
+                "
+                width="60"
+                height="10"
+                viewBox="0 0 1000 300"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M166.667 1H833.333C924.93 1 999 67.8061 999 150C999 232.194 924.93 299 833.333 299H166.667C75.0698 299 1 232.194 1 150C1 67.8061 75.0698 1 166.667 1Z"
+                  stroke="black"
+                  stroke-opacity="0.3"
+                  stroke-width="2"
+                />
+              </svg>
+              <svg
+                id="crc1"
+                style="position: absolute; top: 101px"
+                width="10"
+                height="10"
+                viewBox="0 0 5 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.5 2.5C4.5 3.60457 3.60457 4.5 2.5 4.5C1.39543 4.5 0.5 3.60457 0.5 2.5C0.5 1.39543 1.39543 0.5 2.5 0.5C3.60457 0.5 4.5 1.39543 4.5 2.5Z"
+                  stroke="black"
+                />
+              </svg>
+              <svg
+                id="crc2"
+                style="position: absolute; top: 106px"
+                width="10"
+                height="10"
+                viewBox="0 0 5 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.5 2.5C4.5 3.60457 3.60457 4.5 2.5 4.5C1.39543 4.5 0.5 3.60457 0.5 2.5C0.5 1.39543 1.39543 0.5 2.5 0.5C3.60457 0.5 4.5 1.39543 4.5 2.5Z"
+                  stroke="black"
+                />
+              </svg>
+              <svg
+                style="position: absolute; top: 220px"
+                id="ground"
+                width="21"
+                height="91"
+                viewBox="0 0 21 81"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 1V81M13.5 1V81M7.24113 1.41757L0.312927 5.41757M7.24113 15.433L0.312927 19.433M7.24113 10.433L0.312927 14.433M7.24113 5.43301L0.312927 9.43301M7.24113 61.433L0.312927 65.433M7.24113 75.433L0.312927 79.433M7.24113 70.433L0.312927 74.433M7.24113 65.433L0.312927 69.433M7.24113 42.433L0.312927 46.433M7.24113 56.433L0.312927 60.433M7.24113 51.433L0.312927 55.433M7.24113 46.433L0.312927 50.433M7.24113 21.433L0.312927 25.433M7.24113 36.433L0.312927 40.433M7.24113 31.433L0.312927 35.433M7.24113 26.433L0.312927 30.433M20.25 1.41757L13.3218 5.41757M20.25 15.433L13.3218 19.433M20.25 10.433L13.3218 14.433M20.25 5.43301L13.3218 9.43301M20.25 61.433L13.3218 65.433M20.25 75.433L13.3218 79.433M20.25 70.433L13.3218 74.433M20.25 65.433L13.3218 69.433M20.25 42.433L13.3218 46.433M20.25 56.433L13.3218 60.433M20.25 51.433L13.3218 55.433M20.25 46.433L13.3218 50.433M20.25 21.433L13.3218 25.433M20.25 36.433L13.3218 40.433M20.25 31.433L13.3218 35.433M20.25 26.433L13.3218 30.433"
+                  stroke="black"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+        <section class="graph">
+          <button class="clr">Clear</button>
+          <canvas id="canvas" width=500 height=300></canvas>
+        </section>
+      </section>
+    </main>
+  </body>
+  <script src="scripts/script.js"></script>
+</html>
