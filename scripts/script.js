@@ -4,6 +4,7 @@ let lp;
 let Yp;
 let YpMax;
 let YpMin;
+let u;
 let dega = 0;
 let degb;
 let rot = 0;
@@ -30,14 +31,14 @@ function pagechange1() {
   x = true;
 }
 clr.addEventListener("click", () => {
-  ctx.clearRect(0, 0, 500, 300);
+  ctx.clearRect(0, 0, 500, 700);
   z = 0;
 });
 
 let num;
 function calcPar() {
   num = Number(document.querySelector("#val").value);
-  if (num >= 0 && num <= 7000) {
+  if (num >= 30 && num <= 70) {
     x = false;
     Rk = num;
     Dk = 2 * Rk + 20;
@@ -63,12 +64,13 @@ function animation() {
     degb = (dega * Math.PI) / 180;
     Yp = Math.round(Dk / 2 + Rk * Math.cos(degb));
     document.querySelector("#val6").innerHTML = "Yp:" + Math.round(Yp);
-    dega += 1;
+    u = -Rk * Math.sin(degb);
+    document.querySelector("#val7").innerHTML = "U:" + Math.round(u);
     rot = Math.round((Math.acos(Yp / YpMax) * 180) / Math.PI);
     crcposx = Math.round(Math.sqrt(YpMax * YpMax - Yp * Yp));
-    document.querySelector("#val7").innerHTML = "Deg:" + Math.round(rot);
-    document.querySelector("#val8").innerHTML =
-      "CirclePos:" + Math.round(crcposx);
+    document.querySelector("#val8").innerHTML = "Deg:" + Math.round(rot);
+    document.querySelector("#val9").innerHTML =
+      "CirclePos:" + Math.round(crcposx); dega += 1;
     document
       .querySelector("#stick")
       .setAttribute("transform", `rotate(${-rot}, ${-Rk - 4}, 0)`);
@@ -128,16 +130,18 @@ function drawPres() {
   document.querySelector("#crc2").setAttribute("transform", `translate(0, 0)`);
 }
 
-setInterval(drawCos, 1)
+setInterval(drawCos, 1);
 
 function drawCos() {
   if (x) {
-    y = ((Math.acos(Yp / YpMax) * 180)) / Math.PI;
+    y = Dk / 2 + Rk * Math.cos(degb);
+    fi = -Rk * Math.sin(degb);
     if (z > 300) {
       z = 0;
     } else {
       z += 0.01;
     }
-    ctx.fillRect(20 * z, y+50, 2, 2);
+    ctx.fillRect(20 * z, y + 80, 2, 2);
+    ctx.fillRect(20 * z, fi + 400, 2, 2);
   }
 }

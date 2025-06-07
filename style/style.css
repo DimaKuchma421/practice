@@ -164,6 +164,21 @@ iframe {
   margin: 10px;
   background-color: white;
   width: 500px;
-  height: 300px;
+  height: 600px;
   border: 10px #03406a solid;
+  position: relative;
+}
+.YpText{
+  position: absolute; 
+  top: 60px;
+  left: 15px;
+  font-size: large;
+  font-family: sans-serif;
+}
+.UText{
+  position: absolute; 
+  top: 320px;
+  left: 15px;
+  font-size: large;
+  font-family: sans-serif;
 }
